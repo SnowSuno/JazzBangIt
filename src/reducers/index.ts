@@ -3,6 +3,7 @@ import {persistReducer} from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
 import api from "./api";
+import keyword from "./keyword";
 
 const persistConfig = {
     key: "root",
@@ -12,6 +13,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
     api,
+    keyword,
 });
 
 export default persistReducer(persistConfig, rootReducer);
