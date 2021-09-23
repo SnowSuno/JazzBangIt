@@ -18,8 +18,10 @@ function Home() {
     return (
         <div className="Home">
             <Header />
-            <Keywords />
             <div className="contents">
+                <p>검색 키워드</p>
+                <Keywords />
+                <p>JAAAZZZ방 목록</p>
                 <RoomList />
             </div>
         </div>
