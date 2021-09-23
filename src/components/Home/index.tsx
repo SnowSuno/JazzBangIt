@@ -1,11 +1,14 @@
 import React from "react";
 
+import Header from "./Header";
+
 function Home() {
 
 
     return (
         <div>
-            Home
+            <Header />
+            <div style={{height: "100rem"}}/>
         </div>
     );
 }

@@ -9,6 +9,8 @@ import ReduxThunk from "redux-thunk";
 import {persistStore} from "redux-persist";
 import {PersistGate} from "redux-persist/integration/react";
 
+import {ParallaxProvider} from "react-scroll-parallax";
+
 import Routes from "./Routes";
 
 const store = createStore(
@@ -21,7 +23,9 @@ ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
-                <Routes />
+                <ParallaxProvider>
+                    <Routes />
+                </ParallaxProvider>
             </PersistGate>
         </Provider>
     </React.StrictMode>,

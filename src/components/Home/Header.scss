@@ -1,0 +1,44 @@
+$bigHeaderHeight: 250px;
+$smallHeaderHeight: 75px;
+
+.Header {
+  background-color: #303845;
+  height: $bigHeaderHeight;
+  position: sticky;
+  top: $smallHeaderHeight - $bigHeaderHeight;
+  overflow: hidden;
+
+
+
+
+  .info {
+    color: #FFFFFF;
+  }
+
+  .small-header {
+    position: absolute;
+    bottom: 0;
+    height: $smallHeaderHeight;
+    box-sizing: border-box;
+    width: 100%;
+    padding-inline: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    &.big {
+      height: 140px;
+      width: 100%;
+      margin-top: 10px;
+      //position: absolute;
+      //top: 53px;
+    }
+    &.small {
+      height: 35px;
+      width: 110px;
+    }
+  }
+}
