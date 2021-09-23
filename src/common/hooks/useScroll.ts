@@ -6,12 +6,14 @@ interface useScrollProps {
 
 export const useScroll = ({max}: useScrollProps) => {
     const [state, setState] = useState<number>(0);
-    const onScroll = () => {
-        setState(Math.min(window.scrollY, max));
-    };
+
     useEffect(() => {
+        const onScroll = () => {
+            setState(Math.min(window.scrollY, max));
+        };
+
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
-    }, []);
+    }, [max]);
     return state;
 };

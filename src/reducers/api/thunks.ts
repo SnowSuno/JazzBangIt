@@ -4,7 +4,7 @@ import {ApiAction} from "./types";
 import {getApiData} from "../../common/api/syncroom";
 import {getDataAsync} from "./actions";
 
-export function getRoomsThunk(): ThunkAction<Promise<void>, RootState, null, ApiAction> {
+export function getData(): ThunkAction<Promise<void>, RootState, null, ApiAction> {
     return async dispatch => {
         const {request, success, failure} = getDataAsync;
         dispatch(request());
