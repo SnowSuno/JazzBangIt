@@ -8,7 +8,9 @@ $smallHeaderHeight: 75px;
   top: $smallHeaderHeight - $bigHeaderHeight;
   overflow: hidden;
   z-index: 999;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
 
   .info {
@@ -21,6 +23,7 @@ $smallHeaderHeight: 75px;
     height: $smallHeaderHeight;
     box-sizing: border-box;
     width: 100%;
+    max-width: 850px;
     padding-inline: 20px;
     display: flex;
     flex-direction: row;
