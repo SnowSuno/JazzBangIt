@@ -1,0 +1,19 @@
+.Keywords {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+
+  .chip {
+    background-color: #FFFFFF;
+  }
+
+
+  .add {
+    .chip {
+      width: 32px;
+    }
+    input {
+
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import "./Keywords.scss";
 
 import {Chip} from "@mui/material";
 
@@ -14,9 +15,17 @@ function Keywords() {
         <div className="Keywords">
             {keywords.map((keyword) => (
                 <Chip
+                    className="chip"
                     label={keyword}
                     onDelete={() => dispatch(deleteKeyword(keyword))}/>
             ))}
+
+            <div className="add">
+                <Chip
+                    className="chip"
+                />
+                <input type="text"/>
+            </div>
         </div>
     );
 }
