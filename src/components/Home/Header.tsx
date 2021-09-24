@@ -1,8 +1,6 @@
 import React from "react";
 import "./Header.scss";
 
-import {Parallax} from "react-scroll-parallax";
-
 import {useScroll} from "../../common/hooks/useScroll";
 
 import {ReactComponent as BigLogo} from "../../resources/images/logo-big.svg";
@@ -14,10 +12,7 @@ function Header() {
 
     return (
         <div className="Header">
-            <Parallax y={['-170px', '80px']}>
-                <BigLogo className="logo big" opacity={scrollOpacity(80, 0, y)}/>
-            </Parallax>
-
+            <BigLogo className="logo big" opacity={scrollOpacity(80, 0, y)}/>
 
             <div className="small-header">
                 <SmallLogo className="logo small" opacity={scrollOpacity(60, 120, y)}/>
