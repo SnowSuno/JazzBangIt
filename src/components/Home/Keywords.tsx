@@ -7,25 +7,27 @@ import {useSelector, useDispatch} from "react-redux";
 import {RootState} from "../../reducers";
 import {deleteKeyword} from "../../reducers/keyword";
 
-function Keywords() {
+interface KeywordProps {
+    toggleDrawer: (open: boolean) => () => void;
+}
+
+function Keywords({toggleDrawer}: KeywordProps) {
     const keywords = useSelector(((state: RootState) => state.keyword.keywords));
     const dispatch = useDispatch();
 
     return (
         <div className="Keywords">
+            <Chip
+                className="chip add"
+                onClick={toggleDrawer(true)}
+            />
+
             {keywords.map((keyword) => (
                 <Chip
                     className="chip"
                     label={keyword}
                     onDelete={() => dispatch(deleteKeyword(keyword))}/>
             ))}
-
-            <div className="add">
-                <Chip
-                    className="chip"
-                />
-                <input type="text"/>
-            </div>
         </div>
     );
 }

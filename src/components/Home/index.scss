@@ -1,6 +1,7 @@
 .Home {
   .contents {
     max-width: 800px;
+    min-height: calc(100vh - 75px);
     margin-inline: auto;
     padding-inline: 5px;
     display: flex;

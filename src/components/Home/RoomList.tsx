@@ -9,8 +9,8 @@ function RoomList() {
 
     return (
         <div className="RoomList">
-            {rooms.map(({name}) => <div>{name}</div>)
-            }
+            {/*{rooms.map(({name}) => <div>{name}</div>)*/}
+            {/*}*/}
         </div>
     );
 }

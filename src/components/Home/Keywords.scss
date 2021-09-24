@@ -5,15 +5,11 @@
 
   .chip {
     background-color: #FFFFFF;
-  }
 
-
-  .add {
-    .chip {
+    &.add {
       width: 32px;
     }
-    input {
-
-    }
   }
+
+
 }
