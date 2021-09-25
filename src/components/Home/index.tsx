@@ -9,7 +9,7 @@ import {useDispatch} from "react-redux";
 import {getData} from "../../reducers/api";
 import {addKeyword} from "../../reducers/keyword";
 
-import {Button, Drawer, Divider} from "@mui/material";
+import {Button, Drawer, Divider, Fab} from "@mui/material";
 
 import useInput from "../../common/hooks/useInput";
 
@@ -55,6 +55,10 @@ function Home() {
                 <p>재즈방 목록</p>
                 <RoomList />
             </div>
+
+            <Fab variant="extended">
+                새로고침
+            </Fab>
 
             <Drawer
                 open={open}
