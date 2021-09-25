@@ -3,11 +3,22 @@
   flex-direction: row;
   gap: 5px;
 
+  & > div {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+
   .chip {
     background-color: #FFFFFF;
 
     &.add {
       width: 32px;
+
+      svg {
+        transform: translateX(9px) scale(0.9);
+        fill: #8a8a8a;
+      }
     }
   }
 

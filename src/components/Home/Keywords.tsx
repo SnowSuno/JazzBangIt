@@ -1,7 +1,12 @@
 import React from "react";
 import "./Keywords.scss";
 
+import {TransitionGroup} from "react-transition-group";
+import {Collapse} from "@mui/material";
+
 import {Chip} from "@mui/material";
+import {Add, Clear} from '@mui/icons-material';
+
 
 import {useSelector, useDispatch} from "react-redux";
 import {RootState} from "../../reducers";
@@ -19,15 +24,21 @@ function Keywords({toggleDrawer}: KeywordProps) {
         <div className="Keywords">
             <Chip
                 className="chip add"
+                icon={<Add transform="scale(0.9)"/>}
                 onClick={toggleDrawer(true)}
             />
-
-            {keywords.map((keyword) => (
-                <Chip
-                    className="chip"
-                    label={keyword}
-                    onDelete={() => dispatch(deleteKeyword(keyword))}/>
-            ))}
+            <TransitionGroup>
+                {keywords.map((keyword) => (
+                    <Collapse key={keyword} orientation="horizontal">
+                        <Chip
+                            className="chip"
+                            label={keyword}
+                            onDelete={() => dispatch(deleteKeyword(keyword))}
+                            deleteIcon={<Clear transform="scale(0.9)"/>}
+                        />
+                    </Collapse>
+                ))}
+            </TransitionGroup>
         </div>
     );
 }
