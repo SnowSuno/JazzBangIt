@@ -35,15 +35,6 @@ function Home() {
                 <RoomList />
             </div>
             <div className="float">
-                {/*<Fab*/}
-                {/*    className="fab"*/}
-                {/*    color="primary"*/}
-                {/*    variant="extended"*/}
-                {/*>*/}
-                {/*    <SearchIcon sx={{mr: 1}}/>*/}
-                {/*    /!*<CircularProgress sx={{mr: 1}}/>*!/*/}
-                {/*    재즈 방 찾기*/}
-                {/*</Fab>*/}
                 <LoadingButton
                     color="primary"
                     variant="contained"
