@@ -13,5 +13,14 @@
       margin: 15px 0 5px;
     }
   }
+
+  .float {
+    position: fixed;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 }
 

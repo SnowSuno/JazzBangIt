@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+import {createTheme, ThemeProvider} from '@mui/material/styles';
+
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -22,11 +24,19 @@ const store = createStore(
 );
 const persistor = persistStore(store);
 
+const theme = createTheme({
+    palette: {
+        primary: {main: "#344c70"}
+    }
+});
+
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
-                <Routes />
+                <ThemeProvider theme={theme}>
+                    <Routes />
+                </ThemeProvider>
             </PersistGate>
         </Provider>
     </React.StrictMode>,
