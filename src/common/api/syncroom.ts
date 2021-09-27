@@ -5,8 +5,10 @@ const API_ENDPOINT = "https://webapi.syncroom.appservice.yamaha.com/ndroom/room_
 
 export const getApiData = async () => {
     const response = await axios.get<Response>(API_ENDPOINT, {timeout: 5000});
-    return response.data.rooms.map(({room_name, need_passwd}): RoomType => ({
+    return response.data.rooms.map(({room_name, room_desc, num_members, need_passwd}): RoomType => ({
         name: room_name,
+        desc: room_desc ? room_desc.trim() : "",
+        members: num_members,
         isPrivate: need_passwd
     }));
 }
