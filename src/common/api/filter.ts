@@ -5,6 +5,14 @@ export const filterData = (data: RoomType[], keywords: string[]): RoomType[] => 
 );
 
 const filter = (keywords: string[]) => keywords.length !== 0
-    ? (room: RoomType) => keywords.some(keyword => room.name.toLowerCase()
-        .includes(keyword.toLowerCase()))
+    ? (room: RoomType) => {
+        const searchScope: string[] = [
+            room.name,
+            room.desc,
+            ...room.tags
+        ]
+    
+        return (keywords.some(keyword => searchScope.some(searchString =>  
+            (searchString.toLowerCase().includes(keyword.toLowerCase())))));
+    }
     : () => true;
