@@ -4,6 +4,19 @@
 
   .inner {
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .tags {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      .tag {
+        font-size: 12px;
+        color: #577FBC;
+      }
+    }
 
     .title {
       display: flex;
@@ -17,17 +30,15 @@
       }
 
     }
-
-    .extra {
-      .desc {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 12px;
-        color: #8a8a8a;
-        word-break: break-all;
-        white-space: pre-wrap;
-      }
+    .desc {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      font-size: 12px;
+      color: #8a8a8a;
+      word-break: break-all;
+      white-space: pre-wrap;
     }
+
 
     .member {
       color: #5d5d5d;
