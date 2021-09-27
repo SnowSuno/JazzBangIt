@@ -5,6 +5,8 @@ import {useScroll} from "../../common/hooks/useScroll";
 
 import {ReactComponent as BigLogo} from "../../resources/images/logo-big.svg";
 import {ReactComponent as SmallLogo} from "../../resources/images/logo-small.svg";
+
+import {IconButton} from "@mui/material";
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
 function Header() {
@@ -16,7 +18,9 @@ function Header() {
 
             <div className="small-header">
                 <SmallLogo className="logo small" opacity={scrollOpacity(60, 120, y)}/>
-                <InfoOutlinedIcon className="info"/>
+                <IconButton size="large">
+                    <InfoOutlinedIcon className="info"/>
+                </IconButton>
             </div>
 
         </div>
