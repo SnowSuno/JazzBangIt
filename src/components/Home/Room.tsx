@@ -16,9 +16,7 @@ function Room({room}: RoomProps) {
         <Card className="Room" variant="outlined">
             <div className="inner">
                 {room.tags.length > 0 ? <div className="tags">
-                    {room.tags.map(tag => (
-                        <span className="tag">{`#${tag}`}</span>
-                    ))}
+                    {room.tags.map(tag => `#${tag}`).join("    ")}
                 </div> : null}
                 <div className="title">
                     {room.isPrivate ? <LockIcon/> : null}
