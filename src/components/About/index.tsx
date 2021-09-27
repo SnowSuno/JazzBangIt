@@ -4,6 +4,9 @@ import classNames from "classnames";
 
 import {Link} from "react-router-dom";
 
+import {IconButton} from "@mui/material";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+
 interface AboutProps {
     show: boolean;
 }
@@ -11,8 +14,17 @@ interface AboutProps {
 function About({show}: AboutProps) {
     return (
         <div className={classNames("About", {show})}>
+            <div className="header">
+                <Link to="/">
+                    <IconButton size="large">
+                        <ArrowBackIcon sx={{color: "white"}} fontSize="inherit"/>
+                    </IconButton>
+                </Link>
+            </div>
+
+
             About
-            <Link to="/"><button>home</button></Link>
+
         </div>
     );
 }

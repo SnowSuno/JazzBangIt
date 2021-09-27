@@ -5,12 +5,22 @@
   z-index: 200;
   width: 100%;
   min-height: 100vh;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 
   transition: transform .3s ease-in-out;
-  transform: translateX(100%);
+  transform: translateX(calc(100% + 15px));
 
   &.show {
     transform: none;
+  }
+
+  .header {
+    background-color: #344c70;
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-inline: 10px;
   }
 }
 
