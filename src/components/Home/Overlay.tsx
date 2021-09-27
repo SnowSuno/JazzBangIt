@@ -56,6 +56,7 @@ function Overlay({open, toggleDrawer}: OverlayProps) {
                     size="small"
                     onClick={submit}
                     disabled={input.value.length === 0}
+                    color="secondary"
                 >
                     추가
                 </Button>

@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: translateY(13vh);
+    transform: translateY(calc(38vh - 250px));
 
     p {
       font-size: 25px;

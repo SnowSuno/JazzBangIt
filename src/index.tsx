@@ -26,7 +26,8 @@ const persistor = persistStore(store);
 
 const theme = createTheme({
     palette: {
-        primary: {main: "#344c70"}
+        primary: {main: "#344c70"},
+        secondary: {main: "#577FBC"}
     }
 });
 
