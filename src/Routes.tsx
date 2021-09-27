@@ -1,5 +1,7 @@
 import React from "react";
-import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
+import "./Routes.scss";
+
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 import Home from "./components/Home";
 import About from "./components/About";
@@ -7,10 +9,13 @@ import About from "./components/About";
 function Routes() {
     return (
         <Router>
+            <Home />
             <Switch>
-                <Route exact path="/" component={Home}/>
-                <Route exact path="/about" component={About}/>
-                <Route component={() => <Redirect to="/"/>}/>
+                <Route
+                    render={({location}) => (
+                        <About show={location.pathname === '/about'}/>
+                    )}
+                />
             </Switch>
         </Router>
     );

@@ -1,6 +1,8 @@
 import React from "react";
 import "./Header.scss";
 
+import {Link} from "react-router-dom";
+
 import {useScroll} from "../../common/hooks/useScroll";
 
 import {ReactComponent as BigLogo} from "../../resources/images/logo-big.svg";
@@ -18,11 +20,12 @@ function Header() {
 
             <div className="small-header">
                 <SmallLogo className="logo small" opacity={scrollOpacity(60, 120, y)}/>
-                <IconButton size="large">
-                    <InfoOutlinedIcon className="info"/>
-                </IconButton>
+                <Link to="/about">
+                    <IconButton size="large">
+                        <InfoOutlinedIcon className="info"/>
+                    </IconButton>
+                </Link>
             </div>
-
         </div>
     );
 }
