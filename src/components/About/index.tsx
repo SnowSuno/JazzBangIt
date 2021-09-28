@@ -2,24 +2,28 @@ import React from "react";
 import "./index.scss";
 import classNames from "classnames";
 
-import {Link} from "react-router-dom";
-
 import {IconButton} from "@mui/material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import {RouteComponentProps, withRouter} from "react-router-dom";
 
 interface AboutProps {
     show: boolean;
 }
 
-function About({show}: AboutProps) {
+function About({show, history}: AboutProps & RouteComponentProps) {
+    const goBack = () => {
+        history.goBack();
+    };
+
     return (
         <div className={classNames("About", {show})}>
             <div className="header">
-                <Link to="/">
-                    <IconButton size="large">
-                        <ArrowBackIcon sx={{color: "white"}} fontSize="inherit"/>
-                    </IconButton>
-                </Link>
+                <IconButton
+                    size="large"
+                    onClick={goBack}
+                >
+                    <ArrowBackIcon sx={{color: "white"}} fontSize="inherit"/>
+                </IconButton>
             </div>
 
 
@@ -29,4 +33,4 @@ function About({show}: AboutProps) {
     );
 }
 
-export default About;
+export default withRouter(About);

@@ -1,8 +1,6 @@
 import React from "react";
 import "./Header.scss";
 
-import {Link} from "react-router-dom";
-
 import {useScroll} from "../../common/hooks/useScroll";
 
 import {ReactComponent as BigLogo} from "../../resources/images/logo-big.svg";
@@ -11,7 +9,11 @@ import {ReactComponent as SmallLogo} from "../../resources/images/logo-small.svg
 import {IconButton} from "@mui/material";
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
-function Header() {
+interface HeaderProps {
+    moveToAbout: () => void;
+}
+
+function Header({moveToAbout}: HeaderProps) {
     const y = useScroll({max: 175});
 
     return (
@@ -20,11 +22,9 @@ function Header() {
 
             <div className="small-header">
                 <SmallLogo className="logo small" opacity={scrollOpacity(60, 120, y)}/>
-                <Link to="/about">
-                    <IconButton size="large">
-                        <InfoOutlinedIcon className="info"/>
-                    </IconButton>
-                </Link>
+                <IconButton size="large" onClick={moveToAbout}>
+                    <InfoOutlinedIcon className="info"/>
+                </IconButton>
             </div>
         </div>
     );
@@ -40,7 +40,5 @@ const scrollOpacity = (start: number, end: number, y: number) => {
         return opacity
     }
 }
-
-
 
 export default Header;

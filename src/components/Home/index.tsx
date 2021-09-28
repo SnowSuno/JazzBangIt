@@ -13,7 +13,9 @@ import {RootState} from "../../reducers";
 import LoadingButton from '@mui/lab/LoadingButton';
 import SearchIcon from '@mui/icons-material/Search';
 
-function Home() {
+import {RouteComponentProps, withRouter} from "react-router-dom";
+
+function Home({history}: RouteComponentProps) {
     const {loading} = useSelector((state: RootState) => state.api);
     const keywords = useSelector((state: RootState) => state.keyword.keywords);
     const dispatch = useDispatch();
@@ -25,9 +27,13 @@ function Home() {
         dispatch(getData(keywords));
     }, [dispatch, keywords]);
 
+    const moveToAbout = () => {
+        history.push("/about");
+    };
+
     return (
         <div className="Home">
-            <Header />
+            <Header moveToAbout={moveToAbout}/>
             <div className="contents">
                 <p>검색 키워드</p>
                 <Keywords toggleDrawer={toggleDrawer}/>
@@ -51,4 +57,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default withRouter(Home);
