@@ -6,6 +6,19 @@ import {IconButton} from "@mui/material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import {RouteComponentProps, withRouter} from "react-router-dom";
 
+import ListSubheader from '@mui/material/ListSubheader';
+import List from '@mui/material/List';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Collapse from '@mui/material/Collapse';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import DraftsIcon from '@mui/icons-material/Drafts';
+import SendIcon from '@mui/icons-material/Send';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import StarBorder from '@mui/icons-material/StarBorder';
+
 interface AboutProps {
     show: boolean;
 }
@@ -24,10 +37,13 @@ function About({show, history}: AboutProps & RouteComponentProps) {
                 >
                     <ArrowBackIcon sx={{color: "white"}} fontSize="inherit"/>
                 </IconButton>
+                <span>About</span>
             </div>
-
-
-            About
+            <List>
+                <ListItemButton>
+                    <ListItemText primary="왜 만들었나요?"/>
+                </ListItemButton>
+            </List>
 
         </div>
     );

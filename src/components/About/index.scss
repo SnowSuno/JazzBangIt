@@ -21,6 +21,12 @@
     flex-direction: row;
     align-items: center;
     padding-inline: 10px;
+    gap: 5px;
+
+    span {
+      color: #FFFFFF;
+      font-size: 19px;
+    }
   }
 }
 
