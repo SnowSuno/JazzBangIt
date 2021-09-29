@@ -1,14 +1,17 @@
+
 .About {
   position: fixed;
   top: 0;
   background-color: #ECEEF2;
   z-index: 200;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 
   transition: transform .3s ease-in-out;
   transform: translateX(calc(100% + 15px));
+  //animation-timing-function: ease-in-out;
+
 
   &.show {
     transform: none;
@@ -28,5 +31,27 @@
       font-size: 19px;
     }
   }
+
+  .body {
+    height: calc(100vh - 75px);
+    overflow-y: scroll;
+  }
 }
 
+//@keyframes slide-in {
+//  from {
+//    transform: translateX(calc(100% + 15px));
+//  }
+//  to {
+//    transform: none;
+//  }
+//}
+//
+//@keyframes slide-out {
+//  from {
+//    transform: none;
+//  }
+//  to {
+//    transform: translateX(calc(100% + 15px));
+//  }
+//}

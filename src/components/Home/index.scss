@@ -1,4 +1,9 @@
 .Home {
+  &.noscroll {
+    overflow: hidden;
+    height: 100vh;
+  }
+
   .contents {
     max-width: 800px;
     min-height: calc(100vh - 75px);

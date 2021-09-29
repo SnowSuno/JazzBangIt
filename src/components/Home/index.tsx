@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import "./index.scss";
+import classNames from "classnames";
 
 import Header from "./Header";
 import Keywords from "./Keywords";
@@ -15,7 +16,11 @@ import SearchIcon from '@mui/icons-material/Search';
 
 import {RouteComponentProps, withRouter} from "react-router-dom";
 
-function Home({history}: RouteComponentProps) {
+interface HomeProps {
+    bodyScroll: boolean;
+}
+
+function Home({bodyScroll, history}: HomeProps & RouteComponentProps) {
     const {loading} = useSelector((state: RootState) => state.api);
     const keywords = useSelector((state: RootState) => state.keyword.keywords);
     const dispatch = useDispatch();
@@ -32,7 +37,7 @@ function Home({history}: RouteComponentProps) {
     };
 
     return (
-        <div className="Home">
+        <div className={classNames("Home", {noscroll: !bodyScroll})}>
             <Header moveToAbout={moveToAbout}/>
             <div className="contents">
                 <p>검색 키워드</p>

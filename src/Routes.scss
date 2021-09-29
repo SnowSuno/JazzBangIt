@@ -15,11 +15,11 @@
 
 .router {
   &-enter {
-    opacity: 0;
+    transform: translateX(100%);
   }
   &-enter-active {
-    opacity: 1;
-    transition: opacity 200ms;
+    transform: none;
+    transition: transform ease 300ms;
   }
 }
 

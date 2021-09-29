@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import "./index.scss";
 import classNames from "classnames";
 
@@ -21,15 +21,27 @@ import StarBorder from '@mui/icons-material/StarBorder';
 
 interface AboutProps {
     show: boolean;
+    enableBodyScroll: (state: boolean) => void;
 }
 
-function About({show, history}: AboutProps & RouteComponentProps) {
+function About({show, enableBodyScroll, history}: AboutProps & RouteComponentProps) {
     const goBack = () => {
         history.goBack();
     };
+    const aboutRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!show) enableBodyScroll(true);
+    }, [show]);
 
     return (
-        <div className={classNames("About", {show})}>
+        <div
+            className={classNames("About", {show})}
+            onTransitionEnd={({target}) => {
+                if (target === aboutRef.current && show) enableBodyScroll(false);
+            }}
+            ref={aboutRef}
+        >
             <div className="header">
                 <IconButton
                     size="large"
@@ -39,14 +51,18 @@ function About({show, history}: AboutProps & RouteComponentProps) {
                 </IconButton>
                 <span>About</span>
             </div>
-            <List>
-                <ListItemButton>
-                    <ListItemText primary="왜 만들었나요?"/>
-                </ListItemButton>
-            </List>
-
+            <div className="body">
+                <List>
+                    <ListItemButton>
+                        <ListItemText primary="왜 만들었나요?"/>
+                    </ListItemButton>
+                    {Array(20).fill(<ListItemButton>
+                        <ListItemText primary="qwer"/>
+                    </ListItemButton>)}
+                </List>
+            </div>
         </div>
     );
 }
 
-export default withRouter(About);
+export default withRouter(React.memo(About));
