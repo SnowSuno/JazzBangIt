@@ -34,6 +34,11 @@
     height: calc(100vh - 75px);
     overflow-y: scroll;
 
+    >div {
+      max-width: 800px;
+      margin-inline: auto;
+    }
+
     .info {
       display: flex;
       flex-direction: column;
