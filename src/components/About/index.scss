@@ -91,10 +91,19 @@
         font-size: 15px;
         line-height: 25px;
       }
-      iframe {
-        width: 100%;
+      .video {
         margin-top: 15px;
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+
+        iframe {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+        }
       }
+
       .like {
         color: #b6b6b6;
         font-size: 13px;
@@ -104,6 +113,7 @@
     .reset {
       width: calc(100% - 20px);
       margin-inline: 10px;
+      margin-bottom: 50px;
     }
   }
 }

@@ -89,11 +89,13 @@ function TmiList() {
                     <Collapse in={open[2]} timeout="auto" unmountOnExit className="collapse">
                         심심해서 개발과정 한번 타임랩스로 찍어봤습니다...
                         <span className="like">좋아요와 구독</span>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/fRr50w8tRaU"
-                                title="YouTube video player" frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen />
-                        <ListItemButton>
+                        <div className="video">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wlEJQrzHtQg"
+                                    title="YouTube video player" frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen />
+                        </div>
+                        <ListItemButton onClick={linkTo("https://youtu.be/wlEJQrzHtQg/")}>
                             <ListItemIcon>
                                 <YouTubeIcon />
                             </ListItemIcon>
@@ -120,7 +122,7 @@ function TmiList() {
                         <ListItemIcon>
                             <GitHubIcon />
                         </ListItemIcon>
-                        <ListItemText primary="소스 보기"/>
+                        <ListItemText primary="소스 코드 보기"/>
                     </ListItemButton>
                 </List>
                 <Reset />
