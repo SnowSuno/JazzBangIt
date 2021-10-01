@@ -21,7 +21,7 @@ function About({show, enableBodyScroll, history}: AboutProps & RouteComponentPro
 
     useEffect(() => {
         if (!show) enableBodyScroll(true);
-    }, [show]);
+    }, [show, enableBodyScroll]);
 
     return (
         <div
